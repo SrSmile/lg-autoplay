@@ -1,5 +1,5 @@
 
-(function($, window, document, undefined) {
+(function() {
 
     'use strict';
 
@@ -178,4 +178,4 @@
 
     $.fn.lightGallery.modules.autoplay = Autoplay;
 
-})(jQuery, window, document);
+})();
