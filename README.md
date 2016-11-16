@@ -32,6 +32,9 @@ $ npm install lg-autoplay
 
 You can also directly download lg-autoplay from github.
 
+#### CDN
+If you prefer to use a CDN you can load files via [jsdelivr](https://www.jsdelivr.com/projects/lg-autoplay)
+
 #### Include Javascript files
 Include lg-autoplay plugin after lightgallery.min.js.
 ``` html
