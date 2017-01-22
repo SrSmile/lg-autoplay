@@ -157,7 +157,7 @@
             }
 
             _this.fromAuto = true;
-            _this.core.slide(_this.core.index, false, false);
+            _this.core.slide(_this.core.index, false, false, 'next');
         }, _this.core.s.speed + _this.core.s.pause);
     };
 
