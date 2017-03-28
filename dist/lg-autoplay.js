@@ -1,4 +1,4 @@
-/*! lg-autoplay - v1.0.3 - 2017-03-28
+/*! lg-autoplay - v1.0.4 - 2017-03-28
 * http://sachinchoolur.github.io/lightGallery
 * Copyright (c) 2017 Sachin N; Licensed GPLv3 */
 
@@ -48,17 +48,6 @@
         }
 
         this.core.s = $.extend({}, defaults, this.core.s);
-
-        if (this.core.s.autoplay) {
-            this.init();
-        }
-
-        return this;
-    };
-
-    Autoplay.prototype.init = function() {
-        var _this = this;
-
         this.interval = false;
 
         // Identify if slide happened from autoplay
@@ -75,6 +64,14 @@
             this.core.s.progressBar = false;
         }
 
+        this.init();
+
+        return this;
+    };
+
+    Autoplay.prototype.init = function() {
+        var _this = this;
+
         // append autoplay controls
         if (_this.core.s.autoplayControls) {
             _this.controls();
@@ -89,9 +86,11 @@
         _this.progress();
 
         // Start autoplay
-        _this.$el.one('onSlideItemLoad.lg.tm', function() {
-            _this.startlAuto();
-        });
+        if (_this.core.s.autoplay) {
+            _this.$el.one('onSlideItemLoad.lg.tm', function() {
+                _this.startlAuto();
+            });
+        }
 
         // cancel interval on touchstart and dragstart
         _this.$el.on('onDragstart.lg.tm touchstart.lg.tm', function() {
