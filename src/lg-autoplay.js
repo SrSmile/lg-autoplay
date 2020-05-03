@@ -125,7 +125,7 @@
     // Manage autoplay via play/stop buttons
     Autoplay.prototype.controls = function() {
         var _this = this;
-        var _html = '<span class="lg-autoplay-button lg-icon"></span>';
+        var _html = '<button aria-label="Toggle autoplay" class="lg-autoplay-button lg-icon"></button>';
 
         // Append autoplay controls
         $(this.core.s.appendAutoplayControlsTo).append(_html);
